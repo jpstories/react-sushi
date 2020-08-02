@@ -11,17 +11,6 @@ import { useSelector } from 'react-redux'
 const Header = () => {
     const { totalPrice, totalCount } = useSelector(({ cart }) => cart)
 
-    const ContentBtn = () => {
-        return (
-            <>
-                <span>{totalPrice} ₽</span>
-                <div className="button__delimiter"></div>
-                <img className="cart__logo" width="25" src={cart} alt="" />
-                <span>{totalCount ? totalCount : ''}</span>
-            </>
-        )
-    }
-
     return (
         <div className="header">
             <div className="container">
@@ -35,7 +24,12 @@ const Header = () => {
                 </Link>
 
                 <Link to="/cart">
-                    <Button cartBtn outline-none content={<ContentBtn />} />
+                    <Button cartBtn outline-none>
+                        <span>{totalPrice} ₽</span>
+                        <div className="button__delimiter"></div>
+                        <img className="cart__logo" width="25" src={cart} alt="" />
+                        <span>{totalCount ? totalCount : ''}</span>
+                    </Button>
                 </Link>
             </div>
         </div>

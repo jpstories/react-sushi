@@ -14,6 +14,7 @@ ReactDOM.render(
       <Router>
           <Provider store={store}>
               <App />
+              <img alt="background" className="body__img"/>
           </Provider>
       </Router>,
 //   </React.StrictMode>,

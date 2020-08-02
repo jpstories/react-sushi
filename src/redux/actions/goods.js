@@ -12,7 +12,7 @@ export const setLoaded = (payload) => ({
 
 export const fetchGoods = (category, sortType) => (dispatch) => {
     dispatch(setLoaded(false))
-    axios.get(`http://localhost:3001/goods?${
+    axios.get(`/goods?${
       category !== null ? `category=${category}`: ''
       }&_sort=${sortType.type}&_order=${sortType.order}`)
       .then(({ data }) => {

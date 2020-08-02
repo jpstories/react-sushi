@@ -6,7 +6,6 @@ const Sort = React.memo(function Sort({ items, activeSortType, onClickSortType }
     const [visiblePopUp, setVisiblePopUp] = React.useState(false);
     const sortRef = React.useRef();
     const activeLabel = items.find((obj) => obj.type === activeSortType).name;
-    console.log(activeLabel);
 
     const toggleVisiblePopup = () => {
         setVisiblePopUp(!visiblePopUp);
